@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    background-color: #041912;
+    color: #F5F0E4;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', Georgia, Cambria, serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #03140E;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6A64B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B88730;
+}
+
+/* Luxury Gold Foil Shimmer */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF0CA 0%, #E5B869 35%, #D6A64B 60%, #B88730 85%, #F4D391 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #F4D391 0%, #D6A64B 50%, #B88730 100%);
+}
+
+.forest-gradient-bg {
+  background: linear-gradient(145deg, #073D2B 0%, #05291F 70%, #031C14 100%);
+}
+
+/* Luxury Grain & Noise Texture */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Subtle Geometric Dot Grid */
+.bg-subtle-pattern {
+  background-image: radial-gradient(rgba(214, 166, 75, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Hairline Gold Borders */
+.border-gold-hairline {
+  border-color: rgba(214, 166, 75, 0.18);
+}
+
+/* Rotating Stamp Animation */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+@keyframes shimmerGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(214, 166, 75, 0.2), inset 0 0 15px rgba(214, 166, 75, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(214, 166, 75, 0.45), inset 0 0 25px rgba(214, 166, 75, 0.25);
+  }
+}
+
+.animate-shimmer-glow {
+  animation: shimmerGlow 3s ease-in-out infinite;
+}
+
+/* Glassmorphism Luxury Surface */
+.luxury-glass {
+  background: rgba(5, 28, 20, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(214, 166, 75, 0.25);
+}
+
+.luxury-glass:hover {
+  border-color: rgba(214, 166, 75, 0.5);
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
